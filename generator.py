@@ -3,7 +3,7 @@ from diffusers import StableDiffusionPipeline
 
 
 image_model_id = "stabilityai/stable-diffusion-2"
-device = "cuda"
+device = "cpu"
 image_gen_steps = 35
 generator = torch.Generator(device).manual_seed(42)
 guidance_scale = 9
