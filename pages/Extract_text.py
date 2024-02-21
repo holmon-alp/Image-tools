@@ -1,6 +1,7 @@
 import cv2
+import numpy as np
 import pytesseract
-import streamlit
+import streamlit as st
 
 from app import typewriter
 
@@ -17,11 +18,11 @@ st.title("Extract text from image")
 ftypes = ["png", "jpg"]
 file = st.file_uploader("Upload image to extract text", type=ftypes)
 if file:
-  with st.spinner('Wait a moment...'):
-    st.image(file)
+    with st.spinner('Wait a moment...'):
+        st.image(file)
 
-  bytes_data = file.getvalue()
-  nparr = np.fromstring(bytes_data, np.uint8)
-  img_np = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
-  typewriter("Extracted text: %s" % extract_text_from_image(img_np), speed)
+    bytes_data = file.getvalue()
+    nparr = np.fromstring(bytes_data, np.uint8)
+    img_np = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+    typewriter("Extracted text: %s" % extract_text_from_image(img_np))
 
