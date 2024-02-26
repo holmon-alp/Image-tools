@@ -1,16 +1,18 @@
 import torch
 from diffusers import StableDiffusionPipeline
 
-
+# CUDA_LAUNCH_BLOCKING=1
 image_model_id = "stabilityai/stable-diffusion-2"
-device = "cuda"
+# device = "cuda"
+device = torch.device("cuda")
 image_gen_steps = 35
 generator = torch.Generator(device).manual_seed(42)
 guidance_scale = 9
 image_size = (432, 432)
+
 image_gen_model = StableDiffusionPipeline.from_pretrained(
     image_model_id, torch_dtype=torch.float16,
-    revision="fp16" #, use_auth_token="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", guidance_scale=9
+    variant="fp16" #, use_auth_token="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", guidance_scale=9
 )
 
 image_gen_model = image_gen_model.to(device)
