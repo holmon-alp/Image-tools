@@ -1,10 +1,15 @@
 import streamlit as st
 import time
 # from generator import generate_image
-import convert
 import effects
 import removebg
-import extract 
+import extract
+import requests
+from PIL import Image
+from io import BytesIO
+import numpy as np
+
+
 
 st.set_page_config(
     page_title="Image tools",
@@ -23,42 +28,82 @@ def typewriter(text: str, mark1="", mark2=""):
         container.markdown(str(mark1)+tokens+str(mark2))
         time.sleep(0.05)
 
-def actions(remove, extract, sketch, painting, watercolor, magical, cartoonizer, classic_art, comics):
+
+
+def show_and_download(image):
+    def to_bytes(img, type):
+        if isinstance(img, np.ndarray):
+            img = Image.fromarray(img)
+        img_io = BytesIO() # Buffer for save image 
+        img = img.convert('RGB')
+        # Save the image to the BytesIO object    
+        img.save(img_io, format=type)  # Specify the format as needed
+        return img_io.getvalue()
+    # Display image
+    st.image(image)
+
+    col1, col2 = st.columns(2)
+    with col1:
+        st.download_button(
+            "Download JPEG", 
+            to_bytes(image, "JPEG"), 
+            file_name="image.jpg",
+            type="primary"
+        )
+    with col2:
+        st.download_button(
+            "Download PNG", 
+            to_bytes(image, "PNG"), 
+            file_name="image.png",
+            type="primary"
+        )
+    
+    
+
+def actions(remove, extract_t, sketch, painting, watercolor, magical, cartoonizer, classic_art, comics):
     if remove:
-        removed = removebg.removebg(file)
-        st.image(removed)
-    if extract:
-        text = extract.text_from_image(file)
-        typewriter(text, "```", "```")
+        with st.spinner('Wait a moment...'):
+            removed = removebg.removebg(file)
+            show_and_download(removed)
+    if extract_t:
+        with st.spinner('Wait a moment...'):
+            text = extract.text_from_image(file)
+            st.write("Extracted text: ")
+            if len(text) > 0: typewriter(text, "```", "```")
+            else: 
+                typewriter("Cannot extract text from this image :(", "||", "||")
     if sketch:
-        img  = effects.sketch(file)
-        st.image(img)
+        with st.spinner('Wait a moment...'):
+            img  = effects.sketch(file)
+            show_and_download(img)
     if painting:
-        img = effects.painting(file)
-        st.image(img)
+        with st.spinner('Wait a moment...'):
+            img = effects.painting(file)
+            show_and_download(img)
     if watercolor:
-        img = effects.watercolor(file)
-        st.image(img)
+        with st.spinner('Wait a moment...'):
+            img = effects.watercolor(file)
+            show_and_download(img)
     if magical:
-        img = effects.magical(file)
-        st.image(img)
+        with st.spinner('Wait a moment...'):
+            img = effects.magical(file)
+            show_and_download(img)
     if cartoonizer:
-        img = effects.cartoonizer(file)
-        st.image(img)
+        with st.spinner('Wait a moment...'):
+            img = effects.cartoonizer(file)
+            show_and_download(img)
     if classic_art:
-        img = effects.classic_art(file)
-        st.image(img)
+        with st.spinner('Wait a moment...'):
+            img = effects.classic_art(file)
+            show_and_download(img)
     if comics:
-        img = effects.comics(file)
-        st.image(img)
+        with st.spinner('Wait a moment...'):
+            img = effects.comics(file)
+            show_and_download(img)
 
 
-itypes = ["png", "jpg"]
-
-file = st.file_uploader("Upload image", type=itypes)
-if file:
-    typewriter("Image uploaded...", "####")
-    st.image(file)
+def buttons():
+    st.markdown("**Choose you want**")
     # Preparing columns for image actions
     col1, col2, col3, col4, col5 = st.columns(5)
     col6, col7, col8, col9 = st.columns(4)
@@ -86,6 +131,18 @@ if file:
         magical, cartoonizer, classic_art, comics
     )
 
+itypes = ["png", "jpg"]
+
+file = st.file_uploader("Upload image", type=itypes)
+
+if file:
+    typewriter("Image uploaded...", "#### ")
+    st.image(file)
+    # st.info(type(file))
+    buttons()
+    # st.image(file)
+    
+    
 
 
 

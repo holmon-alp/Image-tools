@@ -66,17 +66,16 @@ def watercolor(file):
 
 def magical(file):
     file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
-    image = cv2.imdecode(file_bytes, 1)
-    # Enhance color, brightness, and contrast
-    enhancer = ImageEnhance.Color(image)
-    image = enhancer.enhance(2) # Increase color
-    enhancer = ImageEnhance.Brightness(image)
-    image = enhancer.enhance(1.3) # Increase brightness
-    enhancer = ImageEnhance.Contrast(image)
-    image = enhancer.enhance(1.5) # Increase contrast
-    # Save the magical effect image
-    return image
-    image.save('magical_image.jpg')
+    image = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
+    smoothed = cv2.bilateralFilter(image, d=9, sigmaColor=75, sigmaSpace=75)
+    # Convert to grayscale
+    gray = cv2.cvtColor(smoothed, cv2.COLOR_BGR2GRAY)
+    # Apply adaptive thresholding to create an edge mask
+    edges = cv2.adaptiveThreshold(gray,  255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY,  9,  9)
+    # Combine the smoothed image and the edge mask
+    magic = cv2.bitwise_and(smoothed, smoothed, mask=edges)
+    return magic
+    
 
 # magical(impath)
 
