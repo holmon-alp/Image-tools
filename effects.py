@@ -56,6 +56,7 @@ def watercolor(file):
     # Downscale and upscale the image to create a 'watercolor' effect
     down = cv2.pyrDown(image_median)
     up = cv2.pyrUp(down)
+    up = cv2.resize(up, (image.shape[1], image.shape[0]))
     # Blend the original image with the 'watercolor' image
     output = cv2.addWeighted(image, 0.5, up, 0.5, 0)
     # Save the watercolor effect image
