@@ -1,4 +1,3 @@
-opencv_python_headless
 tesseract-ocr
 libgl1-mesa-glx
 libglib2.0-0
