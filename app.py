@@ -13,7 +13,7 @@ import numpy as np
 
 st.set_page_config(
     page_title="Image tools",
-    page_icon="🧠",
+    page_icon="💡",
 )
 
 
