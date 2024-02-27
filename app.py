@@ -25,9 +25,9 @@ def typewriter(text: str, mark1="", mark2=""):
     for i in text:
         tokens += i
         container.markdown(f"""
-                           ```
+                           `
                            {tokens}
-                           ```
+                           `
                            """)
         time.sleep(0.05)
 
