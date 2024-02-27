@@ -8,7 +8,7 @@ st.title(" Create a QR code as you like!!!")
 content = st.text_input("Enter a text you want to generate QR", placeholder="Enter text...")
 
 if len(content) > 0:
-    qr = segno.make_qr(content)
+    qr = segno.make(content)
     qr.save("temp_qr.png")
     img = Image.open("temp_qr.png")
     img = np.array(img)
