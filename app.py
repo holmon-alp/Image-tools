@@ -27,7 +27,7 @@ def typewriter(text: str, mark1="", mark2=""):
         container.markdown(f"""
                            ``` 
                            {tokens}
-                           ```
+                           
                            """)
         time.sleep(0.05)
 
