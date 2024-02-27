@@ -4,7 +4,6 @@ import time
 import effects
 import removebg
 import extract
-import requests
 from PIL import Image
 from io import BytesIO
 import numpy as np
