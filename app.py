@@ -144,6 +144,8 @@ if file:
     
 st.markdown(
     """
+    ----
+    ----
     #### This app is just an amateur creation. The app may contain errors and omissions from various situations.
     Using this program: 
     - apply effects to images;

@@ -26,10 +26,9 @@ import streamlit as st
 #   image = image.resize(image_size)
 #   return image
 
-
+st.warning("This feature doesn't work here because GPU doesn't support it.")
 st.markdown(
-    """This feature doesn't work here because GPU doesn't support it.
-
+    """
     If you want to use this feature, please follow the link below and run the program on your machine with GPU support.
 
     [Link](https://github.com/holmon-alp/Image-tools.git)"""

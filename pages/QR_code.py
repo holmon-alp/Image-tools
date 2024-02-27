@@ -22,7 +22,7 @@ if len(content) > 0:
     qr.save("temp_qr.png", scale=12)
     show_("temp_qr.png", "1")
 
-    st.markdown("** You can more creative your QR code **")
+    st.markdown("**You can more creative your QR code**")
     back = st.file_uploader("Upload image for background", type=["png", "jpg", "gif"])
     if back:
         qr.to_artistic(background=back, target='qr_with_background.png', scale=12)
