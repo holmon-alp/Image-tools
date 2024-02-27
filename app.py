@@ -27,17 +27,17 @@ def typewriter(text: str, mark1="", mark2=""):
         container.markdown(f"{mark1} {tokens} {mark2}")
         time.sleep(0.05)
 
-
+def to_bytes(img, type):
+    if isinstance(img, np.ndarray):
+        img = Image.fromarray(img)
+    img_io = BytesIO() # Buffer for save image 
+    img = img.convert('RGB')
+    # Save the image to the BytesIO object    
+    img.save(img_io, format=type)  # Specify the format as needed
+    return img_io.getvalue()
 
 def show_and_download(image):
-    def to_bytes(img, type):
-        if isinstance(img, np.ndarray):
-            img = Image.fromarray(img)
-        img_io = BytesIO() # Buffer for save image 
-        img = img.convert('RGB')
-        # Save the image to the BytesIO object    
-        img.save(img_io, format=type)  # Specify the format as needed
-        return img_io.getvalue()
+    
     # Display image
     st.image(image)
 
