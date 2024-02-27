@@ -135,32 +135,24 @@ def buttons():
 
 itypes = ["png", "jpg"]
 
-file = st.file_uploader("Upload image", type=itypes)
+file = st.file_uploader("Upload image you want to change", type=itypes)
 
 if file:
     typewriter("Image uploaded...", "#### ")
     st.image(file)
-    # st.info(type(file))
     buttons()
     
+st.markdown(
+    """#### This app is just an amateur creation. The app may contain errors and omissions from various situations.
+
+    Using this program: 
+    - apply effects to images;
+    - remove background;
+    - extract text from image;
+    - generate QR code;
+    - generate image via Prompt;
     
-
-
-
-
-
-
-
-
-
-# prompt = st.text_input("Enter prompt to generate image", placeholder="e.g Monkeys singing on scene")
-# if len(prompt) > 8:
-#   typewriter("Generating image for this prompt: ```%s```" % prompt)
-#   with st.spinner('Wait a moment...'):
-#     image = generate_image(prompt)
-#     st.image(image)
-   
-# elif len(prompt)>0 and len(prompt)<=8:
-#   typewriter("Please enter more prompt")
-
-
+    The program was prepared by **Mirjamol Mirislomov** on 02.27.2024.
+    
+    Source code of the program on Github: [Link](https://github.com/holmon-alp/Image-tools.git)"""
+)

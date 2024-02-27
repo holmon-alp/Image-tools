@@ -7,3 +7,5 @@ rembg==2.0.55
 segno==1.6.1
 streamlit==1.31.1
 qrcode-artistic==3.0.2
+torch==2.2.0
+diffusers==0.26.3

@@ -1,8 +1,7 @@
 import numpy as np
 import cv2
-from PIL import Image, ImageEnhance, ImageFilter
+from PIL import Image, ImageFilter
 
-impath = "/home/holmon/Downloads/Telegram Desktop/withpass.jpg"
 def sketch(file):
     file_bytes = np.asarray(bytearray(file.read()), dtype=np.uint8)
     image = cv2.imdecode(file_bytes, 1)
@@ -16,9 +15,8 @@ def sketch(file):
     inverted_blurred = 255 - blurred_image
     # Create the pencil sketch image
     sketch_image = cv2.divide(gray_image, inverted_blurred, scale=256.0)
-    # Save the sketch image
+    # return the sketch image
     return sketch_image
-    # cv2.imwrite('sketch_image.jpg', sketch_image)
 
 # sketch(impath)
 
@@ -42,9 +40,8 @@ def painting(file):
     # Convert back to color, bit-AND with color image
     image_edge = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
     image_cartoon = cv2.bitwise_and(image_color, image_edge)
-    # Save the painting effect image
+    # return the painting effect image
     return image_cartoon
-    # cv2.imwrite('painting_image.jpg', image_cartoon)
 
 # painting(impath)
 
@@ -59,9 +56,8 @@ def watercolor(file):
     up = cv2.resize(up, (image.shape[1], image.shape[0]))
     # Blend the original image with the 'watercolor' image
     output = cv2.addWeighted(image, 0.5, up, 0.5, 0)
-    # Save the watercolor effect image
+    # return the watercolor effect image
     return output
-    # cv2.imwrite('watercolor_image.jpg', output)
 
 # watercolor(impath)
 
@@ -96,9 +92,8 @@ def cartoonizer(file):
     cartoon = cv2.bitwise_and(color, color, mask=edges)
     # Convert to RGB
     cartoon = cv2.cvtColor(cartoon, cv2.COLOR_BGR2RGB)
-    # Save the cartoonized image
+    # return the cartoonized image
     return cartoon
-    # cv2.imwrite('cartoon_painting.jpg', cartoon)
 
 # cartoonizer(impath)
     
@@ -109,9 +104,8 @@ def classic_art(file):
     # Apply filters
     image = image.filter(ImageFilter.FIND_EDGES)
     image = image.filter(ImageFilter.SMOOTH_MORE)
-    # Save the image
+    # return the image
     return image
-    # image.save('classic_art_painting.jpg')
 
 # classic_art(impath)
 
@@ -132,8 +126,7 @@ def comics(file):
     hsvImage = cv2.cvtColor(cartoon, cv2.COLOR_BGR2HSV)
     hsvImage[:,:,1] = hsvImage[:,:,1]*1.5
     cartoon = cv2.cvtColor(hsvImage, cv2.COLOR_HSV2BGR)
-    # Save the cartoonized image
+    # return the cartoonized image
     return cartoon
-    # cv2.imwrite('comics_boom_cartoon.jpg', cartoon)
 
 # comics(impath)
