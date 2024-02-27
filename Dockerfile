@@ -33,7 +33,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone your Streamlit app from a repository (if not in the same directory as Dockerfile)
-# RUN git clone https://github.com/yourusername/your-streamlit-app.git .
+# RUN git clone https://github.com/holmon-alp/Image-tools.git .
 
 # If your app is in the same directory as the Dockerfile, use COPY instead of git clone
 COPY . .
@@ -42,7 +42,8 @@ COPY . .
 RUN pip3 install -r requirements.txt
 
 # Make port  8501 available to the world outside this container
-EXPOSE  8501
+
+
 
 # Define a health check command to let Docker know if your app is running
 HEALTHCHECK CMD curl --fail http://localhost:8501/_stcore/health

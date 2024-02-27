@@ -13,4 +13,3 @@ def text_from_image(img):
     text = pytesseract.image_to_string(gray_image)
     # typewriter("Extracted text: %s" % text)
     return text
-

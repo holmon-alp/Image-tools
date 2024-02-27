@@ -6,3 +6,5 @@ pytesseract==0.3.10
 rembg==2.0.55
 Requests==2.31.0
 streamlit==1.31.1
+segno==1.6.1
+qrcode-artistic==3.0.2
