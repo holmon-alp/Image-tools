@@ -69,6 +69,7 @@ def actions(remove, extract_t, sketch, painting, watercolor, magical, cartoonize
             text = extract.text_from_image(file)
             st.write("Extracted text: ")
         if len(text) > 0: 
+            st.warning(text)
             typewriter(text, "```", "```")
             st.write(f"{len(text)} characters")
         else: 
