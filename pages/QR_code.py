@@ -1,7 +1,7 @@
 import segno
 from PIL import Image
 import streamlit as st
-from app import to_bytes
+from app import to_bytes, typewriter
 from os import remove
 
 st.set_page_config(
@@ -22,7 +22,7 @@ if len(content) > 0:
     qr.save("temp_qr.png", scale=12)
     show_("temp_qr.png", "1")
 
-    st.markdown("**You can more creative your QR code**")
+    typewriter("You can more creative your QR code", "**", "**")
     back = st.file_uploader("Upload image for background", type=["png", "jpg", "gif"])
     if back:
         qr.to_artistic(background=back, target='qr_with_background.png', scale=12)
