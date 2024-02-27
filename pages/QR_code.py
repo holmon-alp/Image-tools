@@ -1,4 +1,5 @@
 import segno
+import numpy as np
 from PIL import Image
 import streamlit as st
 
@@ -8,7 +9,10 @@ content = st.text_input("Enter a text you want to generate QR", placeholder="Ent
 
 if len(content) > 0:
     qr = segno.make_qr(content)
-    st.image(qr)
+    qr.save("temp_qr.png")
+    img = Image.open("temp_qr.png")
+    img = np.array(img)
+    st.image(img)
 
  # Paste QR code onto the background at position (50,  50)
 # qr.to_artistic(background='/home/holmon/Downloads/hazal.jpg', target='qr_with_background.png', scale=5)
