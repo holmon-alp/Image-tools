@@ -10,9 +10,9 @@ content = st.text_input("Enter a text you want to generate QR", placeholder="Ent
 if len(content) > 0:
     qr = segno.make_qr(content)
     qr.save("temp_qr.png")
-    img = Image.open("temp_qr.png").resize((424,424))
-    img = np.array(img)
-    st.image(img)
+    # img = Image.open("temp_qr.png").resize((424,424))
+    # img = np.array(img)
+    st.image("temp_qr.png", caption="Generated QR")
 
  # Paste QR code onto the background at position (50,  50)
 # qr.to_artistic(background='/home/holmon/Downloads/hazal.jpg', target='qr_with_background.png', scale=5)
