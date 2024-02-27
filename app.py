@@ -68,7 +68,9 @@ def actions(remove, extract_t, sketch, painting, watercolor, magical, cartoonize
         with st.spinner('Wait a moment...'):
             text = extract.text_from_image(file)
         st.write("Extracted text: ")
-        if len(text) > 0: typewriter(text, "```", "```")
+        if len(text) > 0: 
+            typewriter(text, "```", "```")
+            st.write(f"{len(text)} characters")
         else: 
             typewriter("Cannot extract text from this image :(", "||", "||")
     if sketch:
