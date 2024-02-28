@@ -11,16 +11,16 @@ Using this program:
 The program was prepared by **Mirjamol Mirislomov**
 > 02.27.2024
 
-## Installation
-### Step 1 Clone the project from Github
+# Installation
+## Step 1 Clone the project from Github
 ```git clone https://github.com/holmon-alp/Image-tools.git```
 ###### Go to the folder where the repository is located
 ```cd <path/to/repository>```
 
-### Step 2.1 Open Terminal, CMD, or another command line, and create a virtual environment for Python
+## Step 2.1 Open Terminal, CMD, or another command line, and create a virtual environment for Python
 ```python -m venv venv```
 
-##### Step 2.2 Activate venv
+## Step 2.2 Activate venv
 > For Linux Based OS Or Mac-OS:
 
 ```source venv/bin/activate```
@@ -37,10 +37,10 @@ The program was prepared by **Mirjamol Mirislomov**
 
 ```source venv/Scripts/activate```
 
-### Step 3 Install requirements packages
+## Step 3 Install requirements packages
 ```pip install -r requirements.txt```
 
-### Step 4 Install **tesseract**
+## Step 4 Install **tesseract**
 > On Mac:
 
 ```brew install tesseract```
@@ -56,7 +56,7 @@ The program was prepared by **Mirjamol Mirislomov**
 
 ```sudo apt install tesseract-ocr-heb```
 
-### Step 5 Run the project in localhost
+## Step 5 Run the project in localhost
 ```streeamlit run app.py```
 ##### Then you can open this app your browser with: https://localhost:8080
 
