@@ -21,19 +21,19 @@ The program was prepared by **Mirjamol Mirislomov**
 ```python -m venv venv```
 
 ##### Step 2.2 Activate venv
-> For Linux Based OS Or Mac-OS
+> For Linux Based OS Or Mac-OS:
 
 ```source venv/bin/activate```
 
-> For Windows With CMD.
+> For Windows With CMD:
 
 ```.\venv\Scripts\activate.bat```
 
-> For Windows With Power shell.
+> For Windows With Power shell:
 
 ```.\venv\Scripts\activate.ps1```
 
-> For Windows With Unix Like Shells For Example Git Bash CLI
+> For Windows With Unix Like Shells For Example Git Bash CLI:
 
 ```source venv/Scripts/activate```
 
@@ -41,22 +41,22 @@ The program was prepared by **Mirjamol Mirislomov**
 ```pip install -r requirements.txt```
 
 ### Step 4 Install **tesseract**
-> On Mac
+> On Mac:
 
 ```brew install tesseract```
 
 ```brew install tesseract --all-languages ```
 
-> On Windows
+> On Windows:
 >> You can download .exe file from [here](https://github.com/UB-Mannheim/tesseract/wiki)
 
-> On Linux
+> On Linux:
 
 ```sudo apt install tesseract-ocr -y```
 
 ```sudo apt install tesseract-ocr-heb```
 
 ### Step 5 Run the project in localhost
-```streeamlit run app.py``
+```streeamlit run app.py```
 ##### Then you can open this app your browser with: https://localhost:8080
 
