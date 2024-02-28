@@ -62,3 +62,9 @@ The program was prepared by **Mirjamol Mirislomov**
 ```streeamlit run app.py```
 ##### Then you can open this app your browser with: https://localhost:8080
 
+## Requirements
+- Python 3.10 or higher
+- Git
+- Minimum 8GB RAM
+- GPU
+- 10GB free space
