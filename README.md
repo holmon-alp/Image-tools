@@ -22,12 +22,19 @@ The program was prepared by **Mirjamol Mirislomov**
 
 ##### Step 2.2 Activate venv
 > For Linux Based OS Or Mac-OS
+
 ```source venv/bin/activate```
+
 > For Windows With CMD.
+
 ```.\venv\Scripts\activate.bat```
+
 > For Windows With Power shell.
+
 ```.\venv\Scripts\activate.ps1```
+
 > For Windows With Unix Like Shells For Example Git Bash CLI
+
 ```source venv/Scripts/activate```
 
 ### Step 3 Install requirements packages
@@ -35,12 +42,16 @@ The program was prepared by **Mirjamol Mirislomov**
 
 ### Step 4 Install **tesseract**
 > On Mac
+
 ```brew install tesseract```
 
 ```brew install tesseract --all-languages ```
+
 > On Windows
 >> You can download .exe file from [here](https://github.com/UB-Mannheim/tesseract/wiki)
+
 > On Linux
+
 ```sudo apt install tesseract-ocr -y```
 
 ```sudo apt install tesseract-ocr-heb```
