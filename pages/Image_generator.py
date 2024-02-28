@@ -1,8 +1,10 @@
 import streamlit as st
+"""
+ Uncomment the following code to use the image generator
+"""
 # import torch
 # from diffusers import StableDiffusionPipeline
 
-# # CUDA_LAUNCH_BLOCKING=1
 # image_model_id = "stabilityai/stable-diffusion-2"
 # # device = "cuda"
 # device = torch.device("cuda")
@@ -26,7 +28,25 @@ import streamlit as st
 #   image = image.resize(image_size)
 #   return image
 
-st.warning("This feature doesn't work here because GPU doesn't support it.")
+# st.set_page_config(
+#     page_title="Image generator",
+#     page_icon="💡",
+# )
+# st.title("Text to image generator")
+
+# prompt = st.text_input("Enter prompt to generate image", placeholder="Enter prompt...")
+# if len(prompt) > 0:
+#     with st.spinner('Wait a moment...'):
+#         img = generate_image(prompt)
+#     st.image(img)
+#     st.download_button(
+#             "Download", 
+#             to_bytes(img, "PNG"), 
+#             file_name="image.png",
+#             type="primary"
+#         )
+
+st.warning("This feature doesn't work here because GPU doesn't support it 😥")
 st.markdown(
     """
     If you want to use this feature, please follow the link below and run the program on your machine with GPU support.
