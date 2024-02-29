@@ -10,7 +10,9 @@ Using this program:
     
 The program was prepared by **Mirjamol Mirislomov**
 > 02.27.2024
-[Go Live](https://image-tools.streamlit.app/)
+
+> [Go Live](https://image-tools.streamlit.app/)
+
 # Installation
 ## Step 1 Clone the project from Github
 ```git clone https://github.com/holmon-alp/Image-tools.git```
