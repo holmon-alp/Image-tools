@@ -1,7 +1,7 @@
 import streamlit as st
-"""
- Uncomment the following code to use the image generator
-"""
+ 
+# Uncomment the following code to use the image generator
+ 
 # import torch
 # from diffusers import StableDiffusionPipeline
 
