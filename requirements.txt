@@ -10,5 +10,5 @@ qrcode-artistic==3.0.2
 # torch==2.2.0
 # torchvision
 torch --extra-index-url https://download.pytorch.org/whl/cpu
-torchvision --extra-index-url https://download.pytorch.org/whl/cp
+torchvision --extra-index-url https://download.pytorch.org/whl/cpu
 diffusers==0.26.3
