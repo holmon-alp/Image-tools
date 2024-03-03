@@ -24,7 +24,7 @@ class ImgGen:
 
     image_gen_model = StableDiffusionPipeline.from_pretrained(
         image_model_id, #torch_dtype=torch.float16,
-        variant="fp16", use_auth_token="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", guidance_scale=9
+        variant="fp16"#, use_auth_token="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", guidance_scale=9
     )
 
     image_gen_model = image_gen_model.to(device)
