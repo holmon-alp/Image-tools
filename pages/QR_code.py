@@ -4,10 +4,10 @@ import streamlit as st
 from app import to_bytes, typewriter
 from os import remove
 
-st.set_page_config(
-    page_title="QR code generator",
-    page_icon="💡",
-)
+# st.set_page_config(
+#     page_title="QR code generator",
+#     page_icon="💡",
+# )
 
 
 st.title(" Create a QR code as you like!!!")
