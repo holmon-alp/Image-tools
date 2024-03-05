@@ -59,7 +59,7 @@ The program was prepared by **Mirjamol Mirislomov**
 ```sudo apt install tesseract-ocr-heb```
 
 ## Step 5 Run the project in localhost
-```streeamlit run app.py```
+```streamlit run app.py```
 ##### Then you can open this app your browser with: https://localhost:8080
 
 ## Requirements
