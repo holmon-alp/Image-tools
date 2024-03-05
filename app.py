@@ -23,6 +23,8 @@ def typewriter(text: str, mark1="", mark2=""):
     tokens = ""
     container = st.empty()
     for i in text:
+        if i == '\n':
+            i = f"{mark1}{i}"
         tokens += i
         container.markdown(f"{mark1}{tokens}{mark2}")
         time.sleep(0.05)
@@ -69,7 +71,7 @@ def actions(remove, extract_t, sketch, painting, watercolor, magical, cartoonize
             text = extract.text_from_image(file)
             st.write("Extracted text: ")
         if len(text) > 3:
-            typewriter(text, "")
+            typewriter(text, "```")
             st.info(f"{len(text)} characters")
         else: 
             typewriter("Cannot extract text from this image :(", "`", "`")
