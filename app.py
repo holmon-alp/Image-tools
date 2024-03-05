@@ -24,7 +24,7 @@ def typewriter(text: str, mark1="", mark2=""):
     container = st.empty()
     for i in text:
         if i == '\n':
-            i = f"{mark1}{i}"
+            i = f"{i}{mark1}"
         tokens += i
         container.markdown(f"{mark1}{tokens}{mark2}")
         time.sleep(0.05)
